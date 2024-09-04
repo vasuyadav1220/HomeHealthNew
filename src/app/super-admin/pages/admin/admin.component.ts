@@ -12,7 +12,7 @@ export class AdminComponent implements OnInit {
   doctorsCount: any[] = [];
   paginatedDoctors: any[] = [];
   currentPage = 1;
-  itemsPerPage = 5;
+  itemsPerPage = 10;
   totalPages = 0;
 
   ngOnInit() {

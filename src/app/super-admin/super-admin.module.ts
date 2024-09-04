@@ -10,6 +10,7 @@ import { PatientsComponent } from './pages/patients/patients.component';
 import { AddAdminComponent } from './shared/add-admin/add-admin.component';
 import { AddNursesComponent } from './shared/add-nurses/add-nurses.component';
 import { AddPatientsComponent } from './shared/add-patients/add-patients.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AddPatientsComponent } from './shared/add-patients/add-patients.compone
   ],
   imports: [
     CommonModule,
-    SuperAdminRoutingModule
+    SuperAdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class SuperAdminModule { }
