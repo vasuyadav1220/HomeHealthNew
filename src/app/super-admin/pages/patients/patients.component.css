@@ -24,3 +24,7 @@
     color: aliceblue;
     padding: 1%;
 }
+
+.table thead{
+    background-color: red;
+}

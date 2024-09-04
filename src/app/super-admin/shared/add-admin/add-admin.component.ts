@@ -1,5 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { AllService } from 'src/app/Api/all.service';
 
 @Component({
   selector: 'app-add-admin',
@@ -8,8 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddAdminComponent implements OnInit {
   myForm!: FormGroup;
+  ck:boolean=false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private route:Router,
+    private service:AllService
+  ) {}
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -23,11 +29,23 @@ export class AddAdminComponent implements OnInit {
 
   onSubmit() {
     if (this.myForm.valid) {
-      // Handle form submission
-      console.log(this.myForm.value);
-    } else {
-      // Handle form errors
-      this.myForm.markAllAsTouched();
+     this.ck = true;
+     this.service.postDoctors(this.myForm.value).subscribe((res:any)=>{
+      console.log('form added',res)
+     })
+    return
     }
+    //  else {
+    //     console.log("Pataient data",this.myForm.value)
+    //     this.service.postDoctors(this.myForm.value).subscribe({
+    //       next: (res)=>{
+    //           this.route.navigate(["/superAdmin/view_admins"])
+    //       },
+    //       error: (err)=>{console.log(err)}
+    //       })
+
+
+    //   this.myForm.markAllAsTouched();
+    // }
   }
 }
