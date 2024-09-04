@@ -7,7 +7,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
                 <h2>Add Admin </h2>
                 <hr>
-                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="myForm" >
                     <div class="container">
                       <div class="row mt-2">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -50,7 +50,7 @@
                       <div class="row mt-4">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                           <label for="image">Image</label>
-                          <input type="file" id="image" class="form-control" formControlName="image">
+                          <input type="file" id="image" class="form-control" formControlName="image"  >
                           <div *ngIf="myForm.get('image')?.touched && myForm.get('image')?.invalid">
                             <small *ngIf="myForm.get('image')?.errors?.['required']" class="text-danger">Image is required.</small>
                           </div>
