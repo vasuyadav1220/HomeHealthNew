@@ -17,22 +17,22 @@
                       <thead>
                         <tr>
                           <th>Sr No</th>
+                          <th>Image</th>
                           <th>First Name</th>
                           <th>Middle Name</th>
                           <th>Last Name</th>
                           <th>Date of Birth</th>
-                          <th>Image</th>
                           <th>Gender</th>
-                          <th>Ethnicity</th>
-                          <th>Address One</th>
-                          <th>Address Two</th>
-                          <th>City</th>
-                          <th>State</th>
+                          <!-- <th>Ethnicity</th> -->
+                          <!-- <th>Address One</th> -->
+                          <!-- <th>Address Two</th> -->
+                           <th>City</th>
+                          <!--<th>State</th>
                           <th>Zip Code</th>
                           <th>Instruction</th>
-                          <th>MRN Number</th>
+                          <th>MRN Number</th> -->
                           <th>Email</th>
-                          <th>Home Phone</th>
+                          <!-- <th>Home Phone</th>
                           <th>Mobile Phone</th>
                           <th>Other Phone</th>
                           <th>Contact Name</th>
@@ -40,28 +40,32 @@
                           <th>Phone Two</th>
                           <th>Emergency Email</th>
                           <th>Language</th>
-                          <th>Comments</th>
+                          <th>Comments</th> -->
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let admin of paginatedDoctors; let i = index">
                           <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                          <td >
+                            <div class="mt-2"><img
+                                    style="width: 50px; border-radius: 30px; text-align: center;"
+                                    src="{{admin.image}}" alt="img" /></div>
+                        </td>
                           <td>{{ admin.firstname }}</td>
                           <td>{{ admin.middlename }}</td>
                           <td>{{ admin.lastname }}</td>
                           <td>{{ admin.dateofBirth }}</td>
-                          <td> <img [src]="admin.image" class="img-fluid w-100" alt=""> </td>
                           <td>{{ admin.gender }}</td>
-                          <td>{{ admin.ethnicity }}</td>
+                          <!-- <td>{{ admin.ethnicity }}</td>
                           <td>{{ admin.addressOne }}</td>
-                          <td>{{ admin.addressTwo }}</td>
+                          <td>{{ admin.addressTwo }}</td>-->
                           <td>{{ admin.city }}</td>
-                          <td>{{ admin.state }}</td>
+                         <!-- <td>{{ admin.state }}</td>
                           <td>{{ admin.zip }}</td>
                           <td>{{ admin.instruction }}</td>
-                          <td>{{ admin.MRNnumber }}</td>
+                          <td>{{ admin.MRNnumber }}</td> -->
                           <td>{{ admin.email }}</td>
-                          <td>{{ admin.homePhone }}</td>
+                          <!-- <td>{{ admin.homePhone }}</td>
                           <td>{{ admin.mobilePhone }}</td>
                           <td>{{ admin.otherPhone }}</td>
                           <td>{{ admin.contactName }}</td>
@@ -69,7 +73,7 @@
                           <td>{{ admin.phoneTwo }}</td>
                           <td>{{ admin.emergencyEmail }}</td>
                           <td>{{ admin.language }}</td>
-                          <td>{{ admin.comments }}</td>
+                          <td>{{ admin.comments }}</td> -->
                         </tr>
                       </tbody>
                     </table>

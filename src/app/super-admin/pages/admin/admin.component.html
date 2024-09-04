@@ -17,20 +17,30 @@
                       <thead>
                         <tr>
                           <th>Sr No</th>
+                          <th>Image</th>
                           <th>Name</th>
                           <th>Email</th>
-                          <th>Password</th>
-                          <th>Image</th>
+                          <!-- <th>Password</th> -->
+                         
                           <th>Mobile Number</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let admin of paginatedDoctors; let i = index">
                           <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                          <td >
+                            <div class="mt-2"><img
+                                    style="width: 50px; border-radius: 30px; text-align: center;"
+                                    src="{{admin.image}}" alt="img" /></div>
+                        </td>
                           <td>{{ admin.name }}</td>
                           <td>{{ admin.email }}</td>
-                          <td>{{ admin.password }}</td>
-                          <td>{{ admin.image }}</td>
+                          <!-- <td>{{ admin.password }}</td> -->
+
+                            
+                            
+                       
+                          <!-- <td> <img [src]="admin.image" class="img-fluid w-100" alt=""> </td> -->
                           <td>{{ admin.mobileNumber }}</td>
                         </tr>
                       </tbody>
