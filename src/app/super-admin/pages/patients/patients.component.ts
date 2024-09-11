@@ -31,6 +31,8 @@ export class PatientsComponent implements OnInit {
     })
   }
 
+
+
   setPage(page: number) {
     this.currentPage = page;
     const startIndex = (page - 1) * this.itemsPerPage;

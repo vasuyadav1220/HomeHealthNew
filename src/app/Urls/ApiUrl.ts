@@ -2,8 +2,10 @@ const baseUrl = 'https://alora-plus.vercel.app/api/v1/';
 
 export const superAdminEndPoints = {
     superAdminLogin: `${baseUrl}login`,
-    doctorsCrud: `${baseUrl}doctors`,
+    getdoctors: `${baseUrl}doctors`,
     doctorsAdd: `${baseUrl}doctor`,
-    nursesCrud: `${baseUrl}nurses`,
-    patientsCrud: `${baseUrl}patients`,
+    getnurses: `${baseUrl}nurses`,
+    addnurses: `${baseUrl}nurse`,
+    getpatients: `${baseUrl}patients`,
+    addpatients: `${baseUrl}patient`,
 }

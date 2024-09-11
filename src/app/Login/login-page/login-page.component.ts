@@ -38,7 +38,7 @@ else{
       if (res.role === 'superadmin' ){
         sessionStorage.setItem('token',res.token)
         // this.snackBar.openSnackBar(`succesfully Register patient !`);
-        this.router.navigate(["/superAdmin/dashboard"])
+        this.router.navigate(["/superAdmin/home"])
       }
       console.log("P Data",res)
      
@@ -46,6 +46,33 @@ else{
     error: (err)=>{console.log(err)}
     })
 }
+}
+
+
+onChanges(data: string) {
+  if (data === 'superadmin') { 
+    this.loginForm.controls['email'].setValue('superadmin@gmail.com');
+    this.loginForm.controls['password'].setValue('superadmin');
+  } else if (data === 'Doctor-Admin') { 
+    this.loginForm.controls['email'].setValue('admin@gmail.com');
+    this.loginForm.controls['password'].setValue('admin');
+  }
+  else if (data === 'Nurse-Admin') {
+    // this.form.controls['mobileNumber'].setValue('+919644605330');
+    this.loginForm.controls['email'].setValue('nurse@gmail.com');
+    this.loginForm.controls['password'].setValue('nurse');
+    } 
+    else if (data === 'Patient-Admin') {
+      // this.form.controls['mobileNumber'].setValue('+919644605330');
+      this.loginForm.controls['email'].setValue('patient@gmail.com');
+      this.loginForm.controls['password'].setValue('patient');
+      } 
+}
+
+
+showPassword: boolean = false;
+togglePasswordVisibility() {
+  this.showPassword = !this.showPassword;
 }
 
 }

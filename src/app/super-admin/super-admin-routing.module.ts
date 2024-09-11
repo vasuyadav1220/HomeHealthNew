@@ -8,6 +8,7 @@ import { AddNursesComponent } from './shared/add-nurses/add-nurses.component';
 import { NursesComponent } from './pages/nurses/nurses.component';
 import { PatientsComponent } from './pages/patients/patients.component';
 import { AddPatientsComponent } from './shared/add-patients/add-patients.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '',
@@ -15,8 +16,12 @@ const routes: Routes = [
      children:[
       {
         path:'',
-        redirectTo:'dashboard',
+        redirectTo:'home',
         pathMatch:'full'
+      },
+      {
+        path:'home',
+        component:HomeComponent
       },
       {
         path:'dashboard',
@@ -46,6 +51,7 @@ const routes: Routes = [
         path:'patients',
         component:AddPatientsComponent
       },
+
 
      ]
    }

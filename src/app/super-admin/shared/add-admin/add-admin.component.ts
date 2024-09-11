@@ -23,10 +23,6 @@ export class AddAdminComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       image: ['', Validators.required]
-
-
-
-
     });
   }
 
@@ -37,6 +33,7 @@ export class AddAdminComponent implements OnInit {
      console.log(this.url)
      this.service.postDoctors(this.myForm.value).subscribe((res:any)=>{
       console.log('form added',res)
+      this.route.navigate(["/superAdmin/view_admins"]);
      })
     return
     }
@@ -78,4 +75,9 @@ export class AddAdminComponent implements OnInit {
       }
     }
   }
+  onCancle(){
+    this.route.navigate(["/superAdmin/view_admins"])
+  }
+
+
 }

@@ -13,14 +13,12 @@ export class AllService extends HttpService {
     super(http)
    }
 
-   // Super Admin API's
-
    superAdminLogin(data: any) {
     return this.post(superAdminEndPoints.superAdminLogin,data)
    }
 
    doctorsForSuperAdmin(){
-    return this.get(superAdminEndPoints.doctorsCrud)
+    return this.get(superAdminEndPoints.getdoctors)
    }
 
    postDoctors(data:any){
@@ -28,10 +26,16 @@ export class AllService extends HttpService {
    }
 
    nursesForSuperAdmin(){
-    return this.get(superAdminEndPoints.nursesCrud)
+    return this.get(superAdminEndPoints.getnurses)
+   }
+   adnursesForSuperAdmin(data:any){
+    return this.post(superAdminEndPoints.addnurses, data)
    }
    patientsForSuperAdmin(){
-    return this.get(superAdminEndPoints.patientsCrud)
+    return this.get(superAdminEndPoints.getpatients)
+   }
+   addpatientsForSuperAdmin(data :any){
+    return this.post(superAdminEndPoints.addpatients, data)
    }
 
 }
