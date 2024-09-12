@@ -24,3 +24,11 @@
     color: aliceblue;
     padding: 1%;
 }
+@media (max-width: 767px) {
+  .headingmy{
+    padding-left: 55px !important;
+  }
+  .table-responsive{
+    margin-left: 36px !important;
+  }
+}

@@ -28,3 +28,11 @@
 .table thead{
     background-color: red;
 }
+@media (max-width: 767px) {
+  h2{
+    padding-left: 55px !important;
+  }
+  .table-responsive{
+    margin-left: 36px !important;
+  }
+}

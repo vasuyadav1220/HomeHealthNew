@@ -8,7 +8,10 @@ const routes: Routes = [
     component:LoginPageComponent
   },
   
-  { path: 'superAdmin', loadChildren: () => import('./super-admin/super-admin.module').then(m => m.SuperAdminModule) }, { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }, { path: 'nurse', loadChildren: () => import('./nurse/nurse.module').then(m => m.NurseModule) }, { path: 'patient', loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule) }];
+  { path: 'superAdmin', loadChildren: () => import('./super-admin/super-admin.module').then(m => m.SuperAdminModule) },
+  { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'nurse', loadChildren: () => import('./nurse/nurse.module').then(m => m.NurseModule) }, 
+  { path: 'patient', loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
