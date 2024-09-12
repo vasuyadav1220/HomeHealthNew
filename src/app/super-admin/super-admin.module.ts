@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 
 
+
 @NgModule({
   declarations: [
     SuperAdminComponent,
@@ -29,7 +30,8 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     CommonModule,
     SuperAdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ]
 })
 export class SuperAdminModule { }

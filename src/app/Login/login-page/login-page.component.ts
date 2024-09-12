@@ -9,8 +9,6 @@ import { AllService } from 'src/app/Api/all.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
-  
   loginForm!:FormGroup;
   ck: boolean = false;
   constructor (
@@ -41,11 +39,14 @@ else{
       if (res.role === 'superadmin' ){
         sessionStorage.setItem('token',res.token)
         this.router.navigate(["/superAdmin/home"])
+        this.service.showSuccess('Super Admin Login','Successfully !');
       }
       else if (res.role === 'doctor' ) {
         sessionStorage.setItem('token',res.token) 
         localStorage.setItem('id',res.id)
         this.router.navigate(["/Admin"])
+        this.service.showSuccess('Super Admin Login','Successfully !');
+
       }
        else if (res.role === 'nurse' ) {
         sessionStorage.setItem('token',res.token) 
@@ -54,6 +55,8 @@ else{
        else if (res.role === 'patient' ) {
         sessionStorage.setItem('token',res.token)
         this.router.navigate(["/patient"])
+        this.service.showSuccess('patient  Login','Successfully !');
+
       }
       console.log("P Data",res)
       this.loading = false;
