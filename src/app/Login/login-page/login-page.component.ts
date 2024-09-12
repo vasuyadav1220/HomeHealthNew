@@ -69,9 +69,6 @@ onChanges(data: string) {
       } 
 }
 
-
-
-
 showPassword: boolean = false;
 togglePasswordVisibility() {
   this.showPassword = !this.showPassword;
