@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-admin',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+  constructor(
+    private route :Router
+  ){
 
+  }
+  toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('collapsed');
+    }
+  }
+
+
+
+  logouts() {
+    sessionStorage.removeItem('token')
+    this.route.navigateByUrl("/", { replaceUrl: true })
+  }
 }

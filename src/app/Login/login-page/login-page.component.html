@@ -139,12 +139,7 @@
                         <p class="text-danger" *ngIf="loginForm.controls['password'].errors && ck"> Enter Your Password
                         </p>
                         <div>
-                            <!-- <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1"  [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash   '"  (click)="togglePasswordVisibility()">
-                                <label class="form-check-label text-secondary fw-bold" for="exampleCheck1" >Show
-                                    Text</label>
-                            </div> -->
-
+                           
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="togglePasswordVisibility()">
                                 <label class="form-check-label text-secondary fw-bold" for="exampleCheck1">
@@ -154,9 +149,25 @@
 
 
                             <div>
-                                <a (click)="addPatients()"
+                                <button (click)="addPatients()"
+                                class="btn btn-primary btn-square btn-block w-100 fw-bold mb-2"
+                                style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;" 
+                                [disabled]="loading">
+                                <span *ngIf="!loading">Login</span>
+                                <span *ngIf="loading">
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Loading...
+                                </span>
+                            </button>
+                            
+                                <!-- <a (click)="addPatients()"
                                     class="btn btn-primary btn-square btn-block w-100 fw-bold mb-2"
-                                    style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;">Login</a>
+                                    style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;" [disabled]="loading">
+                                    <span *ngIf="!loading">Login</span>
+                                    <span *ngIf="loading">
+                                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                      Loading...
+                                    </span></a> -->
                                 <a href="" class="" style="color: #5ba7e9; font-size: 16px; font-weight: 600;">Forgot
                                     your
                                     Password?</a>

@@ -26,6 +26,8 @@ export class LoginPageComponent implements OnInit {
   });
 }
 
+loading: boolean = false;
+
 addPatients() {
   if (this.loginForm.invalid) {
     this.ck = true;
@@ -33,17 +35,31 @@ addPatients() {
 } 
 else{
   console.log("Pataient data",this.loginForm.value)
+  this.loading = true;
   this.service.superAdminLogin(this.loginForm.value).subscribe({
     next: (res)=>{
       if (res.role === 'superadmin' ){
         sessionStorage.setItem('token',res.token)
-        // this.snackBar.openSnackBar(`succesfully Register patient !`);
         this.router.navigate(["/superAdmin/home"])
       }
+      else if (res.role === 'doctor' ) {
+        sessionStorage.setItem('token',res.token) 
+        localStorage.setItem('id',res.id)
+        this.router.navigate(["/Admin"])
+      }
+       else if (res.role === 'nurse' ) {
+        sessionStorage.setItem('token',res.token) 
+        this.router.navigate(["/nurse"])
+      }
+       else if (res.role === 'patient' ) {
+        sessionStorage.setItem('token',res.token)
+        this.router.navigate(["/patient"])
+      }
       console.log("P Data",res)
+      this.loading = false;
      
     },
-    error: (err)=>{console.log(err)}
+    error: (err)=>{console.log(err),this.loading = false;}
     })
 }
 }
@@ -54,8 +70,8 @@ onChanges(data: string) {
     this.loginForm.controls['email'].setValue('superadmin@gmail.com');
     this.loginForm.controls['password'].setValue('superadmin');
   } else if (data === 'Doctor-Admin') { 
-    this.loginForm.controls['email'].setValue('admin@gmail.com');
-    this.loginForm.controls['password'].setValue('admin');
+    this.loginForm.controls['email'].setValue('mayank@gmail.com');
+    this.loginForm.controls['password'].setValue('mayank@123');
   }
   else if (data === 'Nurse-Admin') {
     // this.form.controls['mobileNumber'].setValue('+919644605330');
