@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AllService } from 'src/app/Api/all.service';
- 
+
 @Component({
-  selector: 'app-admin-patients',
-  templateUrl: './admin-patients.component.html',
-  styleUrls: ['./admin-patients.component.css']
+  selector: 'app-nurse-patient',
+  templateUrl: './nurse-patient.component.html',
+  styleUrls: ['./nurse-patient.component.css']
 })
-export class AdminPatientsComponent implements OnInit {
+export class NursePatientComponent implements OnInit {
   myForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -18,7 +18,7 @@ export class AdminPatientsComponent implements OnInit {
 
   userId:any
   ngOnInit(): void {
-    const userIdString = sessionStorage.getItem('id');
+    const userIdString = localStorage.getItem('id');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
     console.log( 'admin id', this.userId);
@@ -100,3 +100,4 @@ export class AdminPatientsComponent implements OnInit {
     }
   }
 }
+

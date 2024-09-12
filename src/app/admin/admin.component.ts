@@ -24,6 +24,7 @@ export class AdminComponent {
 
   logouts() {
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('id')
     this.route.navigateByUrl("/", { replaceUrl: true })
   }
 }

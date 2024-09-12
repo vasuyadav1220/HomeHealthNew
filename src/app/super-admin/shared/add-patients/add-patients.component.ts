@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AllService } from 'src/app/Api/all.service';
+import { AllService } from 'src/app/Api/all.service'; 
 
 @Component({
   selector: 'app-add-patients',

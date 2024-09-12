@@ -1,28 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AllService } from 'src/app/Api/all.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Route, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-view-patients',
-  templateUrl: './view-patients.component.html',
-  styleUrls: ['./view-patients.component.css']
+  selector: 'app-view-patient',
+  templateUrl: './view-patient.component.html',
+  styleUrls: ['./view-patient.component.css']
 })
-export class ViewPatientsComponent implements OnInit {
-  updateForm!:FormGroup;
-
-
-  constructor(private api:AllService,private route:Router,private fb:FormBuilder){
-    this.updateForm = this.fb.group({
-      firstname:[''],
-      middlename:[''],
-      lastname:[''],
-      dateofBirth:[''],
-      gender:[''],
-      city:[''],
-      email:[''],
-    })
-  }
+export class ViewPatientComponent implements OnInit {
+  constructor(private api:AllService){}
 
   
   patientsCount: any[] = [];
@@ -40,17 +25,7 @@ export class ViewPatientsComponent implements OnInit {
     this.getPatients();
   }
 
-
-  updatePatient() {
-    this.api.updatePatientById(this.id, this.patientByIdData).subscribe((res: any) => {
-      console.log('Patient updated successfully', res);
-      window.location.reload()
-    }, (error) => {
-      console.error('Error updating user', error);
-      // Handle error
-    });
-  }
-
+  
 
   getPatients(){
     this.api.patientsForAdmin().subscribe((res:any)=>{

@@ -16,17 +16,18 @@ export class AdminNursesComponent implements OnInit {
     private route:Router
   ) {}
 
-  adminId:any;
+  userId:any
   ngOnInit(): void {
-    const adminIdString = localStorage.getItem('id');
-    this.adminId = adminIdString ? parseInt(adminIdString, 10) : null;
-
-    console.log(this.adminId);
+    const userIdString = sessionStorage.getItem('id');
+    this.userId = userIdString ? parseInt(userIdString, 10) : null;
+    
+    console.log( 'admin id', this.userId);
     this.myForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       mobileNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      doctorId:[this.userId]
     });
   }
 
@@ -35,7 +36,7 @@ export class AdminNursesComponent implements OnInit {
       console.log(this.myForm.value);
       this.service.adnursesForSuperAdmin(this.myForm.value).subscribe((res:any)=>{
         console.log('form added',res)
-        this.route.navigate(["/superAdmin/view_nurses"]);
+        this.route.navigate(["/Admin/view_nurses"]);
        });
     }
   }

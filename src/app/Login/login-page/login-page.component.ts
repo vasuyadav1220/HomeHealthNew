@@ -10,7 +10,6 @@ import { AllService } from 'src/app/Api/all.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  
   loginForm!:FormGroup;
   ck: boolean = false;
   constructor (
@@ -44,11 +43,12 @@ else{
       }
       else if (res.role === 'doctor' ) {
         sessionStorage.setItem('token',res.token) 
-        localStorage.setItem('id',res.id)
+        sessionStorage.setItem('id',res.id)
         this.router.navigate(["/Admin"])
       }
        else if (res.role === 'nurse' ) {
         sessionStorage.setItem('token',res.token) 
+        sessionStorage.setItem('id',res.id)
         this.router.navigate(["/nurse"])
       }
        else if (res.role === 'patient' ) {
