@@ -5,6 +5,7 @@ const adminId = sessionStorage.getItem('id')
 export const superAdminEndPoints = {
     superAdminLogin: `${baseUrl}login`,
     getdoctors: `${baseUrl}doctors`,
+    deletedoctor: `${baseUrl}doctor/`,
     doctorsAdd: `${baseUrl}doctor`,
     getnurses: `${baseUrl}nurses`,
     addnurses: `${baseUrl}nurse`,
@@ -14,4 +15,5 @@ export const superAdminEndPoints = {
     getPatientsForAdmin: `${baseUrl}patient/doctorid/${adminId}`,
     addpatients: `${baseUrl}patient`,
     patientById: `${baseUrl}patient/`,
+    approveDoctor: `${baseUrl}doctor/accountStatusUpdate/`,
 }

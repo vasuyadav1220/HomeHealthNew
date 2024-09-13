@@ -43,6 +43,18 @@ export class HttpService {
         }).pipe(catchError(this.errorHandle))
     }
 
+
+
+    patch(url: string, payload?:any): Observable<any> {
+        const opt = new HttpHeaders({
+            'Content-type': 'application/json',
+            Authorization: `${this.token}`,
+          });
+        return this.http.patch<any>(url,payload,{
+            headers:opt
+        }).pipe(catchError(this.errorHandle))
+    }
+
     delete(url: string): Observable<any> {
         const val = new HttpHeaders({
            'Content-type': 'application/json',
