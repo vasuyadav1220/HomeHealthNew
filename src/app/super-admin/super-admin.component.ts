@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class SuperAdminComponent {
   constructor(
-    private route :Router
-  ){
+    private route :Router){
+      this.name=sessionStorage.getItem('superadmin_name')
+    }
 
-  }
-
+    name:any
 
   // isCollapsed: boolean = false;
 
@@ -36,7 +36,9 @@ export class SuperAdminComponent {
 
 
   logouts() {
-    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('Superadmin_token')
+    sessionStorage.removeItem('id')
+    sessionStorage.removeItem('superadmin_name')
     this.route.navigateByUrl("/", { replaceUrl: true })
   }
 }

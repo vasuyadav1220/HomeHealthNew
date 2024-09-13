@@ -37,23 +37,27 @@ else{
   this.service.superAdminLogin(this.loginForm.value).subscribe({
     next: (res)=>{
       if (res.role === 'superadmin' ){
-        sessionStorage.setItem('token',res.token)
+        sessionStorage.setItem('Superadmin_token',res.token)
+        sessionStorage.setItem('superadmin_name',res.name)
         this.router.navigate(["/superAdmin/home"])
         // this.service.showSuccess('Super Admin Login','Successfully !');
       }
       else if (res.role === 'doctor' ) {
-        sessionStorage.setItem('token',res.token) 
+        sessionStorage.setItem('homecare_token',res.token) 
         sessionStorage.setItem('id',res.id)
+        sessionStorage.setItem('homecare_name',res.name)
         this.router.navigate(["/Admin/admin_home"])
         // this.service.showSuccess('Super Admin Login','Successfully !');
       }
        else if (res.role === 'nurse' ) {
-        sessionStorage.setItem('token',res.token) 
+        sessionStorage.setItem('nurse_token',res.token) 
         sessionStorage.setItem('id',res.id)
+        sessionStorage.setItem('nurse_name',res.name)
         this.router.navigate(["/nurse/nurse_home"])
       }
        else if (res.role === 'patient' ) {
-        sessionStorage.setItem('token',res.token)
+        sessionStorage.setItem('patient_token',res.token)
+        sessionStorage.setItem('patient_name',res.name)
         this.router.navigate(["/patient"])
         // this.service.showSuccess('patient  Login','Successfully !');
       }

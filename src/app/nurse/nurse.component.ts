@@ -11,8 +11,10 @@ export class NurseComponent {
   constructor(
     private route :Router
   ){
-
+    this.nursename=sessionStorage.getItem('nurse_name')
   }
+  nursename:any;
+
   toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     if (sidebar) {
@@ -30,7 +32,8 @@ export class NurseComponent {
 
 
   logouts() {
-    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('nurse_token')
+    sessionStorage.removeItem('nurse_name')
     sessionStorage.removeItem('id')
     this.route.navigateByUrl("/", { replaceUrl: true })
   }
