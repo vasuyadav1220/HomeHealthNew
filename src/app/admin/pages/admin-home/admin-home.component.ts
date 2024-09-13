@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AdminHomeComponent {
 
+ 
+  constructor (){ this.name=sessionStorage.getItem('homecare_name')}
+  
+  name:any
+
+
+
 }

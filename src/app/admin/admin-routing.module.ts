@@ -7,6 +7,8 @@ import { ViewNursesComponent } from './pages/view-nurses/view-nurses.component';
 import { AdminPatientsComponent } from './shared/admin-patients/admin-patients.component';
 import { ViewPatientsComponent } from './pages/view-patients/view-patients.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { AddalotComponent } from './shared/addalot/addalot.component';
+import { ViewAlotComponent } from './pages/view-alot/view-alot.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -39,6 +41,14 @@ const routes: Routes = [
       {
         path:'view_patients',
         component:ViewPatientsComponent
+      },
+      {
+        path:'Addalot',
+        component:AddalotComponent
+      },
+      {
+        path:'View_alot',
+        component:ViewAlotComponent
       },
     ]
 

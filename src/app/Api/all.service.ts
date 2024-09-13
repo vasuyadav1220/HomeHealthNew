@@ -39,8 +39,16 @@ export class AllService extends HttpService {
    nursesForAdmin(){
     return this.get(superAdminEndPoints.getNursesForAdmin)
    }
+
+   getallalotnursesForAdmin(){
+    return this.get(superAdminEndPoints.getallalotssgetNursesForAdmin)
+   }
    adnursesForSuperAdmin(data:any){
     return this.post(superAdminEndPoints.addnurses, data)
+   }
+
+   addslote(data:any){
+    return this.post(superAdminEndPoints.addslotpost, data)
    }
    patientsForSuperAdmin(){
     return this.get(superAdminEndPoints.getpatients)

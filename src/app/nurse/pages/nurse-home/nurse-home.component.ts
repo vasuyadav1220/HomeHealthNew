@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NurseHomeComponent {
 
+  constructor (){ this.name=sessionStorage.getItem('nurse_name')}
+  
+  name:any
+
 }

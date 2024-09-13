@@ -77,4 +77,47 @@ patientDelete(itemDlt: any): void {
   );
 }
 
+
+
+
+nursePhoto = 'path/to/photo.jpg';
+nurseName = 'Hanson, Susan';
+unitNumber = '305';
+carePlan = 'Current care plan';
+allergies = 'Penicillin, sulfa, tramadol';
+diet = 'Regular Diet';
+ongoingOrders = 'Independent w/wheeled walker, Elopement Precautions';
+
+// Task list
+tasks = [
+  { title: 'Medication Assistance', duration: 5, instructions: 'Pour meds into receptacle.', isCompleted: false },
+  { title: 'Bowel Management', duration: 15, instructions: 'Track and document bowel movements.', isCompleted: false },
+  { title: 'Laundry Service', duration: 30, instructions: 'Collect and return clean laundry.', isCompleted: true }
+];
+
+// Medication
+medication = {
+  name: 'Lisinopril Tab 10mg',
+  dosage: '10 mg by mouth',
+  instructions: 'Give 1 tab by mouth 2x a day.',
+  isGiven: false
+};
+
+// Nurse notes
+nurseNote = '';
+
+saveNote() {
+  console.log('Nurse note saved:', this.nurseNote);
+}
+
+  isMedsCollapsed: boolean = true;
+
+  // Toggle the meds collapsed state
+  toggleMeds() {
+    this.isMedsCollapsed = !this.isMedsCollapsed;
+  }
+
+
+
+
 }
