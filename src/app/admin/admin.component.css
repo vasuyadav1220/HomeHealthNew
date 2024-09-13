@@ -31,7 +31,7 @@ body{
 
 .unique-sidebar.collapsed .unique-logo {
     opacity: 0;
-    visibility: hidden;
+    /* visibility: hidden; */
     height: 0;
 }
 
@@ -257,6 +257,15 @@ body{
 
 .info-box-content {
     padding-right: 0 !important;
+}
+
+@media (max-width: 767px) {
+    .collapsed {
+        display: none !important;
+    }
+    .unique-sidebar{
+        height: 700px;
+    }
 }
 
 

@@ -20,6 +20,13 @@ export class NurseComponent {
     }
   }
 
+  toggleSidebar2() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('collapsed');
+    }
+  }
+
 
 
   logouts() {

@@ -26,11 +26,11 @@
 }
 @media (max-width: 767px) {
   .headingmy{
-    padding-left: 55px !important;
+   margin-top: 20px !important;
   }
-  .table-responsive{
+  /* .table-responsive{
     margin-left: 36px !important;
-  }
+  } */
 }
 
 /* .tick-button {

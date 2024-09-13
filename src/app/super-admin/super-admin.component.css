@@ -1,7 +1,8 @@
 /* sidebar section css */
-body{
+body {
     overflow-x: hidden;
 }
+
 .unique-sidebar {
     width: 250px;
     background-color: #f8f9fa;
@@ -9,7 +10,7 @@ body{
     border-right: 1px solid #dee2e6;
     padding: 15px 0;
     transition: width 0.3s ease;
-  
+
 }
 
 .unique-sidebar.collapsed {
@@ -249,7 +250,7 @@ body{
         bottom: 10px;
         left: 10px;
     }
-    
+
 }
 
 
@@ -265,3 +266,12 @@ body{
 //     height: 810px;
 
 // } ** */
+
+@media (max-width: 767px) {
+    .collapsed {
+        display: none !important;
+    }
+    .unique-sidebar{
+        height: 700px;
+    }
+}

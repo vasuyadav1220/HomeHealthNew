@@ -12,13 +12,27 @@ export class SuperAdminComponent {
   ){
 
   }
+
+
+  // isCollapsed: boolean = false;
+
+  // toggleSidebar(): void {
+  //   this.isCollapsed = !this.isCollapsed;
+  // }
+
+
   toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     if (sidebar) {
       sidebar.classList.toggle('collapsed');
     }
   }
-
+  toggleSidebar2() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('collapsed');
+    }
+  }
 
 
   logouts() {

@@ -253,6 +253,15 @@ body{
 }
 
 
+@media (max-width: 767px) {
+    .collapsed {
+        display: none !important;
+    }
+    .unique-sidebar{
+        height: 700px;
+    }
+}
+
 
 
 .info-box-content {

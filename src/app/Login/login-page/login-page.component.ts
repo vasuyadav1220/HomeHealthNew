@@ -26,7 +26,6 @@ export class LoginPageComponent implements OnInit {
 }
 
 loading: boolean = false;
-
 addPatients() {
   if (this.loginForm.invalid) {
     this.ck = true;
@@ -47,7 +46,6 @@ else{
         sessionStorage.setItem('id',res.id)
         this.router.navigate(["/Admin/admin_home"])
         // this.service.showSuccess('Super Admin Login','Successfully !');
-
       }
        else if (res.role === 'nurse' ) {
         sessionStorage.setItem('token',res.token) 
@@ -58,11 +56,9 @@ else{
         sessionStorage.setItem('token',res.token)
         this.router.navigate(["/patient"])
         // this.service.showSuccess('patient  Login','Successfully !');
-
       }
       console.log("P Data",res)
       this.loading = false;
-     
     },
     error: (err)=>{console.log(err),this.loading = false;}
     })
